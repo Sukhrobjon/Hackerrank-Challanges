@@ -1,0 +1,3 @@
+students, subject = input().split()
+
+
