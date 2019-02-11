@@ -29,8 +29,7 @@ if __name__ == "__main__":
     phone_book = dict(input().split() for _ in range(dict_lenght))
     find_key(phone_book)
     
-    print("--- %s seconds ---" % (time.time() - start_time))
-
+    print(f"----{time.time() - start_time} seconds-----")
 
 
     
