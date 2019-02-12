@@ -14,5 +14,5 @@ def find_most_consecutive_ones(num):
             binary_list.remove(result)
             continue
 if __name__ == '__main__':
-    n = 13
+    n = 5
     print(find_most_consecutive_ones(n))
