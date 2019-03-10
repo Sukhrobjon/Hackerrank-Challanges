@@ -24,9 +24,19 @@ class Solution:
             print(current.data, end=' ')
             current = current.next
 
-    def removeDuplicates(self, head):
+    # def removeDuplicates(self, head):
         
-        pass
+    #     pass
+    def removeDups(self, head):
+        current = second = head
+        while current is not None:
+            while second.next is not None:   # check second.next here rather than second
+                if second.next.data == current.data:   # check second.next.data, not second.data
+                    second.next = second.next.next   # cut second.next out of the list
+                else:
+                    second = second.next   # put this line in an else, to avoid skipping items
+            current = second = current.next
+
 
 def remove_duplicate(arr):
     cleaned = []
@@ -34,6 +44,6 @@ def remove_duplicate(arr):
         if i not in cleaned:
             cleaned.append(i)
     return cleaned
-arr = [1, 3, 3, 4, 1, 99]
+arr = [1, 3, 3, 4, 1, 99, 99]
 
 print(remove_duplicate(arr))
