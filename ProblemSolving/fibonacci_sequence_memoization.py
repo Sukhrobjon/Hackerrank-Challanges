@@ -1,16 +1,14 @@
-# def fibonacci(n):
-#     if n == 1:
-#         return 1
-#     elif n == 2:
-#         return 1
-#     elif n > 2:
-#         return fibonacci(n-1) + fibonacci(n-2)
+from functools import lru_cache
+
+def fibonacci(n):
+    if n == 1:
+        return 1
+    elif n == 2:
+        return 1
+    elif n > 2:
+        return fibonacci(n-1) + fibonacci(n-2)
 
 
-# ======= Test Function =======
-
-# for n in range(1, 11):
-#     print(n, ":", fibonacci(n))
 
 fibonacci_cache = {}
 def fibonacci_optimized(n):
@@ -31,5 +29,15 @@ def fibonacci_optimized(n):
     fibonacci_cache[n] = value
     return value
 
+@lru_cache(maxsize = 1000) # default 120 
+def fibonacci_builtin(n):
+    if n == 1:
+        return 1
+    elif n == 2:
+        return 1
+    elif n > 2:
+        return fibonacci_builtin(n-1) + fibonacci_builtin(n-2)
+# ======= Test Function =======
+
 for n in range(1, 1001):
-    print(n, ":", fibonacci_optimized(n))
+    print(n, ":", fibonacci_builtin(n))
