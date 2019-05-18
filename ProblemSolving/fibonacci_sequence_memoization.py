@@ -39,5 +39,5 @@ def fibonacci_builtin(n):
         return fibonacci_builtin(n-1) + fibonacci_builtin(n-2)
 # ======= Test Function =======
 
-for n in range(1, 1001):
-    print(n, ":", fibonacci_builtin(n))
+for n in range(1, 101):
+    print(n, ":", fibonacci(n))
