@@ -13,6 +13,11 @@ def is_prime_v1(n):
 
 
 def is_prime_v2(n):
+    """ 
+        Version 2:
+        Takes a single integer and return true if integer is prime, False otherwise
+        Runtime: O(sqrt(n)) 
+    """
     if n == 1:
         return False
     max_divisor = math.floor(math.sqrt(n))
@@ -23,6 +28,11 @@ def is_prime_v2(n):
 
 
 def is_prime_v3(n):
+    """ 
+        Version 3:
+        Takes a single integer and return true if integer is prime, False otherwise
+        Runtime: approximately O(sqrt(n)/2), it's half of the time of version 2 
+    """
     if n == 1:
         return False
     if n == 2:
@@ -39,10 +49,10 @@ def is_prime_v3(n):
 
 # ====== Test Function =====
 start_time = time.time()
-for n in range(1, 1000000):
-    is_prime_v3(n)
+for n in range(1, 100000):
+    is_prime_v2(n)
 end_time = time.time()
 print("Time required: ", end_time - start_time)
 
-# for n in range(1, 21):
-#     print(n, is_prime_v2(n))
+# for n in range(1, 1000000):
+#     print(n, is_prime_v3(n))
