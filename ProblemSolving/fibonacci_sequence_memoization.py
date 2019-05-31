@@ -18,7 +18,7 @@ def fibonacci_optimized(n):
         return fibonacci_cache[n]
     
 
-    # Compute the Nth term 
+    # else Compute the Nth term 
     if n == 1:
         value = 1
     elif n == 2:
