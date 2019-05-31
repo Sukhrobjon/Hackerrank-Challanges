@@ -24,9 +24,9 @@
 from itertools import permutations, combinations
 n = 5
 k = 2
-# Get all permutations of length 2
-# and length 2
+# create a list of nums from 1 to n inclusive
 s = [int(num) for num in range(1, n+1)]
+# Get all permutations of length 2
 perm = permutations(s, 2)
 
 # Print the obtained permutations
