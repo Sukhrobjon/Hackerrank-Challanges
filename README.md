@@ -4,6 +4,6 @@
     </a>
 </p>
 
-## Description [on progress repo]
+## Description [WIP]
 
-- Here I upload my solutions from HackerRank
+- This is my solution for Hackerrank problems in `Python`
