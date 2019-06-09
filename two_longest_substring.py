@@ -4,27 +4,34 @@ def longest_substring(word):
     seen = set()
     start = 0
     index = 0
-    # word = list(word)
-    # while index < len(word) - 1:
-    for char in word:
-        print('index: ', char)
-        # if word[index] not in seen:
-        if char not in seen:
-            seen.add(char)
+    
+    while(index < (len(word) - 1)):
+        # print('index: ', char)
+        print(seen)
+        if word[index] not in seen:
+            print("inside if")
+            seen.add(word[index])
+
             counter += 1
-        # print(word[:counter])
+            print(word[index])
         else:
+            break
         #     # if counter > longest:
         #     #     longest = counter
         #     # counter = 0
         #     # start += 1
             # index = start
             # print(word[:counter])
-            break
+            
 
     return counter
 
-a = 'abcabcbb'
+# i = 0
+# while i < 9:
+#     print("i: ", i)
+#     i += 1
+
+a = 'ihb'
 print(longest_substring(a))
 
 
