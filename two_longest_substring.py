@@ -56,47 +56,27 @@
 
 class Solution(object):
     def lengthOfLongestSubstring(self, word):
-        """
-        :type s: str
-        :rtype: int
-        """
-
-        longest = 0
-        counter = 0
+    
+        longest = index = counter = 0
         seen = set()
-        # start = 0
-        index = 0
 
         while index < len(word) - 1:
 
             if word[index] not in seen:  # check if the char not in the list
                 seen.add(word[index])
                 counter += 1
+                print("seen in if: ", seen)
             else:  # repeated char found
-                seen.add(word[index])  # empty the set and add the current char
+                print("seen before: ", seen)
+                seen = set(word[index])  # empty the set and add the current char
                 counter = 1 # and add one to counter bc there is one char in the set already
-            
+                print("seen after: ", seen)
             if counter > longest:  # check if current substring is longest
                     longest = counter
             index += 1
         return longest
 
-    def longest_substring(self, word):
-        longest = 0
-        seen = set()
-        counter = 0
-        for char in word:
-            if char not in seen:
-                seen.add(char)
-                counter += 1
-            else:
-                seen = set(char)
-                counter = 1
-            
-            if counter > longest:
-                longest = counter
-
-        return longest
+   
 
 
 
@@ -104,4 +84,22 @@ a = 'abcabcbb'
 b = 'pwwkew'
 c = "dvdf"
 obj = Solution()
-print(obj.longest_substring(a))
+print(obj.lengthOfLongestSubstring(a))
+
+
+# def longest_substring(self, word):
+   #     longest = 0
+   #     seen = set()
+#     counter = 0
+#     for char in word:
+#         if char not in seen:
+#             seen.add(char)
+#             counter += 1
+#         else:
+#             seen = set(char)
+#             counter = 1
+
+#         if counter > longest:
+#             longest = counter
+
+#     return longest
