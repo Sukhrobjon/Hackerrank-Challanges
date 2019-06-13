@@ -31,36 +31,28 @@ def optimized_longest_substring(word):
         
         cur_char = word[index]
         
-        if cur_char not in seen:    
-            seen[cur_char] = index + 1
-            print("index in if: ", index)
-            index += 1
-            
-
-        else: # see the duplicate
-            # print(cur_char)
-            # before setting the new index of the char we need to shift the starter
+        if cur_char in seen:    
+            # update the left side of the window or new starter
+    
             starter = seen[cur_char]
-            
-            # set the dublicated char's value with updated index
             seen[cur_char] = index + 1
-            # updatet the counter
-            counter = index - starter + 1
-            print("counter: ", counter)
-            print("starter: {}, index: {}".format(starter, index))
-            # reset the index to start at the starter
             index = starter
-            print("index after new starter: ", index)
-            
-            
-        longest = max(counter, longest)
-        print("longest: ",longest)
-        print(seen)
-    return longest
+            print("new index of dub char: ", seen[cur_char])
+            print("starter: ", starter)
+            counter = seen[cur_char] - starter
+        
+        seen[cur_char] = index + 1
+        print('index: ', index)
+        index += 1
 
+        longest = max(counter, longest)
+        print(seen)
+    
+    return longest
 
 a = 'abcabcbb'
 b = 'dvdf'
+c = 'pwwkew'
 print(optimized_longest_substring(b))
 
 
