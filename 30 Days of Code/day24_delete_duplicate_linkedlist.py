@@ -7,13 +7,13 @@ class Node:
 class Solution:
     def insert(self, head, data):
             p = Node(data)
-            if head == None:
+            if head is None:
                 head = p
-            elif head.next == None:
+            elif head.next is None:
                 head.next = p
             else:
                 start = head
-                while(start.next != None):
+                while(start.next is not None):
                     start = start.next
                 start.next = p
             return head
@@ -29,7 +29,7 @@ class Solution:
             Remove duplicate elements and return the linked list head
         """
         # check if linked list is empty
-        if(head == None):
+        if(head is None):
             return None
         # set to hold unique values
         unique_values = set()
