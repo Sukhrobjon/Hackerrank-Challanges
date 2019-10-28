@@ -14,9 +14,12 @@
 # Given an array of integers, every element appears twice except for one. Find that single one.
 # Note: Your algorithm should have a linear runtime complexity. Could you implement it without using extra memory?
 
-from collections import Counter
-arr = [1, 2, 4, 5, 1, 4, 5]
+# from collections import Counter
+# arr = [1, 2, 4, 5, 1, 4, 5]
 
-arr_d = Counter(arr)
-print(arr_d)
-print(min(arr_d.values()))
+# arr_d = Counter(arr)
+# print(arr_d)
+# print(min(arr_d.values()))
+
+
+
