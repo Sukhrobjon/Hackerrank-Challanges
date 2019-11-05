@@ -9,6 +9,8 @@ Sample Output
 
 Chris Alan
 '''
+
+
 def solve(s):
     l = list(s)
     l[0] = l[0].upper()
@@ -17,6 +19,7 @@ def solve(s):
             l[i+1] = l[i+1].upper()
     s = ''.join(l)
     return s
+
 
 if __name__ == '__main__':
     name = 'chris alan'
