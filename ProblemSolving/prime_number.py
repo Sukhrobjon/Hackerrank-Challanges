@@ -52,7 +52,8 @@ start_time = time.time()
 for n in range(1, 100000):
     is_prime_v2(n)
 end_time = time.time()
-print("Time required: ", end_time - start_time)
+print("Time required to calculate the prime numbers between 1-100k:",
+    end_time - start_time)
 
 # for n in range(1, 1000000):
 #     print(n, is_prime_v3(n))
