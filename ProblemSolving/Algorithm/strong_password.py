@@ -1,10 +1,18 @@
 def strong_password(n, password):
+    """
+    Function checks if password is strong enough to meet following requirements
+    - Its length is at least 6.
+    - It contains at least one digit.
+    - It contains at least one lowercase English character.
+    - It contains at least one uppercase English character.
+    - It contains at least one special character("!@#$%^&*()-+").
+    """
     required_chars = 0
     # check for lowercase
     lower_case = any(char.islower() for char in password)
     upper_case = any(char.isupper() for char in password)
     digit = any(char.isdigit() for char in password)
-    special_case = any(char for char in password if char in '"!@#$%^&*()-+"')
+    special_case = any(char for char in password if char in "!@#$%^&*()-+")
     if lower_case is False:
         print('lowercase')
         required_chars += 1
