@@ -1,6 +1,4 @@
 def strong_password(n, password):
-    if n < 6:
-        return 6 - n
     required_chars = 0
     # check for lowercase
     lower_case = any(char.islower() for char in password)
@@ -19,13 +17,16 @@ def strong_password(n, password):
     if special_case is False:
         print('special case')
         required_chars += 1
+    # final check for length after required chars added
+    if (required_chars + n) > 5:
+        required_chars = required_chars
+    else:
+        required_chars = 6 - (required_chars + n) + required_chars
+
     return required_chars
-
 n = 6
-password = 'aaaaaa'
-print(strong_password(n, password))
+password = ''
+output = 3
+print(strong_password(0, password))
 
-failing_case = """5, jnhqj"""
-
-    
-    
+failing_case = """5, jnhqj, output = 3"""
