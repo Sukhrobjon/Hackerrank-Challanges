@@ -13,22 +13,28 @@ def two_alternating_chars(text):
         max_length(int): the maximum length of t for the given text, or 0 if
         not possible
     """
+    max_len = 0
     counter = Counter(text)
-    print(f'before sort: {counter}')
-    counter = sorted(counter.items(), key=lambda kv: -kv[1])
-    print(f'after sort: {counter}')
-
+    print(counter)
+    # counter_list = counter.items()
+    # print(counter_list)
+    counter = sorted(counter.items())
     for i in range(len(counter)):
-        pair_1 = counter[i]
-        pair_2 = counter[i+1]
-        if abs(pair_1[1] - pair_2[1]) <= 1:
-            pair = (pair_1[0], pair_2[0])
-            # check if char is not consecutive in the text
-            if not _is_consecutive()
-                print(pair_1, pair_2)
-                return (pair_1[1] + pair_2[1])
+        for j in range(i+1, len(counter)):
+            pair_1 = counter[i]
+            pair_2 = counter[j]
+            if abs(pair_1[1] - pair_2[1]) <= 1:
+                pair = (pair_1[0], pair_2[0])
+                cleaned_text = _keep_pair(pair, text)
+                print(f"pairs: {pair}")
+                print(f"cleaned text: {cleaned_text}, text: {text}")
+                # check if char is not consecutive in the text
+                if not _is_consecutive(cleaned_text):
+                    if max_len < pair_1[1] + pair_2[1]:
+                        # return (pair_1[1] + pair_2[1])
+                        max_len = pair_1[1] + pair_2[1]
 
-    return 0
+    return max_len
 
 
 def _keep_pair(pair, text):
@@ -46,5 +52,13 @@ def _is_consecutive(altered_text):
     return False
 
 
-text = "asdcbsdcagfsdbgdfanfghbsfdab"
-two_alternating_chars(text)
+# print(_keep_pair('bd', 'abaacdabd'))
+text = """muqqzbcjmyknwlmlcfqjujabwtekovkwsfjrwmswqfurtpahkdyqdttizqbkrsmfpxchbjrbvcunogcvragjxivasdykamtkinxpgasmwz"""
+print(two_alternating_chars(text))
+
+
+# sample = [1, 2, 3, 4, 5, 6]
+# for i in range(len(sample)):
+#     for j in range(i+1, len(sample)):
+#         print(f'i: {sample[i]}, j: {sample[j]}')
+
