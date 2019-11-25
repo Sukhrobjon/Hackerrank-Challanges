@@ -6,7 +6,7 @@ def pangrams(s):
     for char in s:
         index = ord(char) - 97
         is_pangram[index] += 1
-    for digit in is_pangram:
-        if digit == 0:
+    for i in is_pangram:
+        if i == 0:
             return "not pangram"
     return "pangram"
